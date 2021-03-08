@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Calendar Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./v-calendar.umd.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but v-calendar doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app">
+        <v-date-picker :mode="mode" v-model="date" :minute-increment="increment" />
+    </div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data() {
+        let date = new Date();
+        date.setMinutes(0, 0, 0);
+        return {
+          mode: 'dateTime',
+          date: date,
+          timezone: '',
+          increment: 10
+        }
+      }
+    })
+    </script>
+  </body>
+</html>
